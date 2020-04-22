@@ -1,0 +1,43 @@
+<p>Gallery</p>
+
+<p><a href="/">go back</a></p>
+
+<div class="card-deck">
+
+    {{#each galery}}
+
+    <div class="card ">
+        <img class="card-img-top" src="{{url}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">{{description}}</p>
+            <p class="card-text"><small class="text-muted">{{formatDate date "YYYYMMDD"}}</small></p>
+        </div>
+    </div>
+
+    {{/each}}
+
+</div>
+<br>
+<hr>
+<nav aria-label="Page navigation example" class="page-footer">
+    <ul class="pagination justify-content-center pagination-sm">
+        {{#paginate pagination type="first"}}
+        <li {{#if disabled}}class="disabled page-item" {{/if}}><a class="page-link" href="{{n}}">First</a></li>
+        {{/paginate}}
+        {{#paginate pagination type="previous"}}
+        <li {{#if disabled}}class="disabled page-item" {{/if}}><a class="page-link" href="{{n}}">Prev</a></li>
+        {{/paginate}}
+        {{#paginate pagination type="middle" limit="3"}}
+        <li {{#if active}}class="active page-item" {{/if}}><a class="page-link" href="{{n}}">{{n}}</a></li>
+        {{/paginate}}
+        {{#paginate pagination type="next"}}
+        <li {{#if disabled}}class="disabled page-item" {{/if}}><a class="page-link" href="{{n}}">Next</a></li>
+        {{/paginate}}
+        {{#paginate pagination type="last"}}
+        <li {{#if disabled}}class="disabled page-item" {{/if}}><a class="page-link" href="{{n}}">Last</a></li>
+        {{/paginate}}
+    </ul>
+</nav>
+
+</div>

@@ -1,0 +1,12 @@
+.card-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 0.5rem;
+  transition: transform 0.2s; /* Animation */
+}
+/*.card:hover {
+  transform: scale(
+    1.5
+  );  (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) 
+}
+*/
